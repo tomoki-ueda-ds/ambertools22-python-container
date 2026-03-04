@@ -1,4 +1,4 @@
-# ベースをMambaにするだけで劇的に速く、安定します
+# ベースをMambaにすることで速く・安定させる
 FROM condaforge/mambaforge:latest
 
 # 必要なOSライブラリ（AmberTools実行用）
@@ -9,7 +9,7 @@ RUN apt-get update && apt-get install -y \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # 全パッケージを一括でインストール
-# AmberTools, Python, 解析スタックをまとめて解決させるのがコツです
+# AmberTools, Python, 解析スタックをまとめて解決させる
 RUN mamba install -y -c conda-forge \
     ambertools=22 \
     python=3.10 \
